@@ -563,3 +563,64 @@ footer {
     color: white;
   }
 }
+/* Add missing CSS variables */
+:root {
+  --success: #10b981;
+  --info: #3b82f6;
+  --light-gray: #e5e7eb;
+}
+
+/* Fix header mobile padding */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 0 2rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  nav ul li {
+    margin-left: 0;
+  }
+}
+
+/* Enhanced dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827;
+    color: #f3f4f6;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+  
+  .btn-outline {
+    border-color: var(--light);
+    color: var(--light);
+  }
+  
+  .form-group input {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: white;
+  }
+}
+
+/* Fix z-index conflicts */
+.modal {
+  z-index: 9999;
+}
+
+header {
+  z-index: 1000;
+}
+
+/* Add missing progress bar animation */
+.progress-bar {
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
